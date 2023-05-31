@@ -1,7 +1,7 @@
 /*
 Nama File : color.hpp
 Deskripsi : File ini berisi fungsi untuk mengubah warna tampilan teks editor pada terminal.
-            File ini di include di textinteface.hpp.
+            File ini di include di textinteface.hpp....
 */ 
 #include <iostream>
 using namespace std;
