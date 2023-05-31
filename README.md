@@ -7,9 +7,9 @@ Team:
 3.Ibra Rizky Siregar(221402104)
 4.Muhammad Thoriq Al Asyjari(221402119)
 
-| Rank | Languages |
+| NIM | Nama Anggota |
 |-----:|-----------|
-|     1|Ajura Sevina Putri|
-|     2|Muhamad Rafi Devari Hasibuan    |
-|     3|Ibra Rizky Siregar     |
-|      |Muhammad Thoriq Al Asyjari|
+|     221402013|Ajura Sevina Putri|
+|     221402063|Muhamad Rafi Devari Hasibuan    |
+|     221402104|Ibra Rizky Siregar     |
+|      221402119|Muhammad Thoriq Al Asyjari|
