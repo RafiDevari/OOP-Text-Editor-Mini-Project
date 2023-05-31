@@ -15,10 +15,10 @@ Deskripsi : File ini berfungsi untuk melihat (read-only) isi dari file yang suda
 #include <conio.h>
 using namespace std;
 
-//class utama pada program.hpp diturunkan menjadi class Read
+//class utama pada hitung.hpp diturunkan menjadi class Read
 class Read
 {
-    private:
+    private:    
         string line;        //Variabel untuk menyimpan setiap baris saat kita menginput yang nantinya akan dimasukkan ke file tertentu menggunakan fstream.
         string filename;    //variabel yang menyimpan nama file
         string extension;   //variabel yang menyimpan nama ekstensi file
@@ -44,7 +44,26 @@ void Read::reads() {                //menginput nama file untuk di baca
     while (getline(file, line)) {
         lines.push_back(line);
     }
+    ifstream files(filename);
+    if (!files.is_open()) {
+        cerr << "Error opening file" << endl;
+        exit(0);
+    }
 
+    int count = 0;
+    int itter = 0;
+    string lined;
+    while (getline(files, lined)) {
+        count += lined.length();
+        itter++;
+    }
+    system("cls");
+    cout << "\033[95m";
+    cout << "File ini memiliki karakter sebanyak " << "\033[35m" << count << "\033[95m" << endl;
+    cout << "File ini memiliki line sebanyak " << "\033[35m" << itter << "\033[95m" << endl;
+    cout << "------------------------------------" << endl;
+    cout << "\033[0m";
+    files.close();
     for (int i = 0; i < lines.size(); ++i) {  //menampilkan setiap isi line
         cout << lines[i] << '\n';
     }

@@ -16,10 +16,9 @@ Deskripsi : File ini berfungsi untuk membuat file baru yang akan disimpan pada f
 #include <vector>
 #include <conio.h>
 #include <windows.h>
-#include "hitung.hpp"
 using namespace std;
 
-class New : public Hitung
+class New
 {
     private:
         string line;        //Variabel untuk menyimpan setiap baris saat kita menginput yang nantinya akan dimasukkan ke file tertentu menggunakan fstream.
@@ -86,8 +85,23 @@ void New::create() {
         file << l << '\n';         //Auto memungkinkan kompiler untuk menentukan tipe data yang sesuai untuk variabel berdasarkan tipe data elemen dalam kumpulan data.
     }                              //Lalu loop ini akan menulis setiap baris dari vektor ke file yang ditentukan.
     file.close();
-    cout << "File ini memiliki karakter sebanyak " << hitungChar(filename) << endl;
-    cout << "Press enter to continue...\n";
+    ifstream files(filename);
+    if (!files.is_open()) {
+        cerr << "Error opening file" << endl;
+        exit(0);
+    }
+
+    int count = 0;
+    int itter = 0;
+    string lined;
+    while (getline(files, lined)) {
+        count += lined.length();
+        itter++;
+    }
+    system("cls");
+    cout << "File ini memiliki karakter sebanyak " << "\033[35m" << count << "\033[0m" << endl;
+    cout << "File ini memiliki line sebanyak " << "\033[35m" << itter << "\033[0m" << endl;
+    cout << "Press enter to continue... " << endl;
     while (true)    
                 {
                     int c = _getch();   
