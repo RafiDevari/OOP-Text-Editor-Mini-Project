@@ -9,6 +9,7 @@ Team:
 
 | Rank | Languages |
 |-----:|-----------|
-|     1| Javascript|
-|     2| Python    |
-|     3| SQL       |
+|     1|Ajura Sevina Putri|
+|     2|Muhamad Rafi Devari Hasibuan    |
+|     3|Ibra Rizky Siregar     |
+|      |Muhammad Thoriq Al Asyjari|
