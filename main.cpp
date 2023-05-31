@@ -3,6 +3,7 @@ Kelompok  : Ibra Rizqy Siregar (221402104)
             Ravi Devari (221402063)
             M. Thoriq (221402119)
             Azura Sevina (221402013)
+            
 Nama File : main.cpp
 Deskripsi : Teks editor sederhana yang mempunyai fitur utama membuat file, membaca file, dan mengedit file.
 */ 
