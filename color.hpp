@@ -1,4 +1,8 @@
 /*
+
+!!CREATED AT 25/05/2023 -> RAFI DEVARI
+!!EDITED AT 25/05/2023 -> AZURA SEVINA
+
 Nama File : color.hpp
 Deskripsi : File ini berisi fungsi untuk mengubah warna tampilan teks editor pada terminal.
             File ini di include di textinteface.hpp.

@@ -1,4 +1,8 @@
 /*
+
+!!CREATED AT 25/05/2023 -> IBRA RIZQY
+!!EDITED AT 30/05/2023 -> RAFI DEVARI
+
 Nama File : edit.hpp
 Deskripsi : File ini berfungsi untuk melihat (read-only) isi dari file yang sudah ada.
             File ini di include di main.cpp.

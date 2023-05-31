@@ -1,4 +1,8 @@
 /*
+
+!!CREATED AT 26/05/2023 -> IBRA RIZQY
+!!EDITED AT 30/03/2023 -> RAFI DEVARI , M THORIQ
+
 Nama File : edit.hpp
 Deskripsi : File ini berfungsi untuk mengubah isi dari file yang sudah ada.
             File ini di include di main.cpp.

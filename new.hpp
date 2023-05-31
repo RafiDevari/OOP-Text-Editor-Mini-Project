@@ -1,4 +1,10 @@
 /*
+
+!!CREATED AT 17/05/2023 -> M THORIQ
+!!EDITED AT 25/05/2023 -> IBRA RIZQY
+!!EDITED AT 29/05/2023 -> RAFI DEVARI
+!!EDITED AT 31
+
 Nama File : new.hpp
 Deskripsi : File ini berfungsi untuk membuat file baru yang akan disimpan pada folder yang sama.
             File ini di include di main.cpp.
