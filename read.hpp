@@ -28,7 +28,8 @@ class Read
         void reads();
 };
 
-void Read::reads() {                //menginput nama file untuk di baca
+void Read::reads() {   //Fungsi untuk membaca file              
+    //menginput nama file untuk di baca
     cout << "Masukkan nama file: ";
     cin >> filename;
 
@@ -44,36 +45,39 @@ void Read::reads() {                //menginput nama file untuk di baca
     while (getline(file, line)) {
         lines.push_back(line);
     }
+    
+    system("cls");
+
+    for (int i = 0; i < lines.size(); ++i) {  //menampilkan setiap isi line
+        cout << lines[i] << '\n';
+    }
+
     ifstream files(filename);
     if (!files.is_open()) {
         cerr << "Error opening file" << endl;
         exit(0);
     }
 
-    int count = 0;
-    int itter = 0;
+    int count = 0; //Penghitung character
+    int itter = 0; //Penghitung baris
     string lined;
-    while (getline(files, lined)) {
+    while (getline(files, lined)) { //Perulangan untuk mengecek file sampai terakhir
         count += lined.length();
         itter++;
     }
-    system("cls");
+    
     cout << "\033[95m";
     cout << "File ini memiliki karakter sebanyak " << "\033[35m" << count << "\033[95m" << endl;
     cout << "File ini memiliki line sebanyak " << "\033[35m" << itter << "\033[95m" << endl;
     cout << "------------------------------------" << endl;
-    cout << "\033[0m";
+    
     files.close();
-    for (int i = 0; i < lines.size(); ++i) {  //menampilkan setiap isi line
-        cout << lines[i] << '\n';
-    }
-
     cout << "\nPress enter to continue...";  //meminta user untuk menginput ENTER
     while (true)
     {
         char c = _getch();
         if (c == '\r')
-            break;
+            break;                          //Akan keluar dari loop saat menginput ENTER
         else
             continue;
     }
@@ -81,7 +85,7 @@ void Read::reads() {                //menginput nama file untuk di baca
     file.close();
 
     ofstream output_file(filename);   //memasukkan isi file yang ingin diubah
-    for (const auto& l : lines) {
-        output_file << l << '\n';
-    }
+    for (const auto& l : lines) {  //Sintaks untuk looping pada C++ modern yang akan merujuk pada elemen yang ada pada lines yaitu vektor dari string bukan menyalin karena iya menggunakan alamatnya
+        output_file << l << '\n';  //Auto memungkinkan kompiler untuk menentukan tipe data yang sesuai untuk variabel berdasarkan tipe data elemen dalam kumpulan data.
+    }                              //Lalu loop ini akan menulis setiap baris dari vektor ke file yang ditentukan.
 }

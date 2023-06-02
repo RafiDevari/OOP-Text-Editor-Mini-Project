@@ -54,7 +54,7 @@ void New::create() {
                 line.pop_back();
             cout << '\b' << ' ' << '\b';
             } else if (!lines.empty()) {
-                moveCursorUp(); //Mengembalikan kursor saat lines belum empty
+                moveCursorUp(); //Mengembalikan kursor ke baris sebelumnya
                 line = lines.back();
                 lines.pop_back();
             cout << '\r';
@@ -91,10 +91,10 @@ void New::create() {
         exit(0);
     }
 
-    int count = 0;
-    int itter = 0;
+    int count = 0; //Penghitung character
+    int itter = 0; //Penghitung baris
     string lined;
-    while (getline(files, lined)) {
+    while (getline(files, lined)) { //Perulangan untuk mengecek file sampai terakhir
         count += lined.length();
         itter++;
     }

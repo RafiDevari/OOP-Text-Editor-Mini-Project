@@ -18,8 +18,7 @@ class Color
         int theme;
         void chooseTheme();     //fungsi untuk menerima input theme untuk memilih tema
         void editorTheme();     //fungsi membaca input theme dan mengubah warnanya
-        int getInfoColor();     //untuk melakukan tes disaat program ini dibuat
-        void tampilanSetting(); //untuk melakukan tes disaat program ini dibuat
+        int  getInfoColor();     //untuk melakukan tes disaat program ini dibuat
 };
 
 void Color::chooseTheme()

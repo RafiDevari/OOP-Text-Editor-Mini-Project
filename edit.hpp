@@ -23,10 +23,11 @@ class Edit
 
         vector<string> lines;
     public:
-        void edit();
+        void edit(); //Fungsi untuk mengedit file
 };
 
 void Edit::edit() {
+
     cout << "Masukkan nama file: ";
     cin >> filename;;
 
@@ -36,31 +37,41 @@ void Edit::edit() {
         return edit();
     }
 
-    while (getline(file, line)) {       //memasukkan isi line ke vektor lines
-        lines.push_back(line);
-    }
+    system("cls");
+    cout << "Ketik 0 untuk keluar dari edit.\n\n";
 
-    for (int i = 0; i < lines.size(); ++i) {        //menampilkan tiap line dan nomor barisnya
-        cout << i + 1 << ": " << lines[i] << '\n';
-    }
+    bool ubah = true;
+    while (ubah)
+    {   
+        while (getline(file, line)) {       //memasukkan isi line ke vektor lines
+            lines.push_back(line);
+        }
 
-    int line_number;                                    
-    cout << "Masukkan nomor baris yang ingin diubah: ";
-    cin >> line_number;
-    
-    if (line_number >= 1 && line_number <= lines.size()) {  //mengubah isi line yang ingin diganti
-        cout << "Masukkan teks baru: ";
-        cin.ignore();
-        getline(cin, line);
-        lines[line_number - 1] = line;
-    } else {
-        cout << "Nomor baris tidak valid\n";
+        for (int i = 0; i < lines.size(); ++i) {        //menampilkan tiap line dan nomor barisnya
+            cout << i + 1 << "| " << lines[i] << '\n';
+        }
+        int line_number;                                    
+        cout << "Masukkan nomor baris yang ingin diubah: ";
+        cin >> line_number;
+        if (line_number == 0) //Exit condition
+        {
+            ubah = false;
+            break;
+        }
+        if (line_number >= 1 && line_number <= lines.size()) {  //mengubah isi line yang ingin diganti
+            cout << "Masukkan teks baru: ";
+            cin.ignore();
+            getline(cin, line);
+            lines[line_number - 1] = line;
+        } else
+            cout << "Nomor baris tidak valid\n";
+        cout << endl;
     }
 
     file.close();
 
     ofstream output_file(filename);       //memasukkan isi file yang ingin diubah
-    for (const auto& l : lines) {
-        output_file << l << '\n';
-    }
+    for (const auto& l : lines) {         //Sintaks untuk looping pada C++ modern yang akan merujuk pada elemen yang ada pada lines yaitu vektor dari string bukan menyalin karena iya menggunakan alamatnya
+        output_file << l << '\n';         //Auto memungkinkan kompiler untuk menentukan tipe data yang sesuai untuk variabel berdasarkan tipe data elemen dalam kumpulan data.
+    }                                     //Lalu loop ini akan menulis setiap baris dari vektor ke file yang ditentukan.
 }
