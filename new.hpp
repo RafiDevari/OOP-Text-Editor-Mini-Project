@@ -71,7 +71,7 @@ void New::create() {
 
     system("cls");
 
-    cout << "Enter the name of the file you want to edit: ";
+    cout << "Enter the name of the file you want to save: ";
     cin >> filename;
 
     string extension;
